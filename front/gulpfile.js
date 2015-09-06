@@ -14,7 +14,7 @@ var path = require('path'),
 
     broSync = require('browser-sync').create(),
 
-    webpack = require('gulp-webpack'),
+    webpack = require('webpack-stream'),
     webpackConfig = require('./webpack.config.js'),
 
     paths = {
