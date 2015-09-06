@@ -31,6 +31,10 @@ gulp.task('js', function() {
         .pipe(gulp.dest(paths.dest + '/javascripts/'));
 });
 
+gulp.task('js-watch', ['js'], function() {
+    browserSync.reload();
+});
+
 gulp.task('css', function() {
 
     return gulp
@@ -82,6 +86,10 @@ gulp.task('icons', function() {
 
 });
 
+gulp.task('icons-watch', ['icons'], function() {
+    browserSync.reload();
+});
+
 gulp.task('watch', ['js', 'css', 'icons'], function() {
 
     broSync.init({
@@ -91,13 +99,8 @@ gulp.task('watch', ['js', 'css', 'icons'], function() {
 
     gulp.watch(paths.src + '/**/*.less', ['css']);
 
-    gulp
-        .watch(paths.src + '/**/*.coffee', ['js'])
-        .on('change', broSync.reload);
-
-    gulp
-        .watch(paths.src + '/icons/*.svg', ['icons'])
-        .on('change', broSync.reload);
+    gulp.watch(paths.src + '/**/*.coffee', ['js-watch'])
+    gulp.watch(paths.src + '/icons/*.svg', ['icons-watch']);
 
 });
 
