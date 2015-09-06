@@ -17,7 +17,7 @@ module.exports = {
             loader: 'coffee-loader'
         }]
     },
-    devtool: 'sourcemap',
+    devtool: 'source-map',
     devtoolModuleFilenameTemplate: '[resourcePath]',
     devtoolFallbackModuleFilenameTemplate: '[resourcePath]?[hash]',
 };
